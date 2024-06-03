@@ -7,7 +7,7 @@ const port = 3000;
 const bodyParser = require('body-parser');
 
 const router = express.Router();
-const connection = require('./config/db');
+const connection = require('./config/connection');
 
 // Increase the JSON payload limit to 50MB
 app.use(bodyParser.json({ limit: '50mb' }));
@@ -38,7 +38,7 @@ app.post('/submit-form', (req, res) => {
   });
 });
 // Import route handlers
-const employeesRouter = require('./routes/employees');
+const employeesRouter = require('./routes');
 
 // Use route handlers
 app.use('/api/employees', employeesRouter);

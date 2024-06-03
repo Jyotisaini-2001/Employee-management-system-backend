@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const connection = require('../config/db');
+const connection = require('../config/connection');
 
 // Route handler for fetching all employees
 router.get('/', (req, res) => {
